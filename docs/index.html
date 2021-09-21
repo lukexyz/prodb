@@ -6,8 +6,8 @@ title: Prodb
 keywords: fastai
 sidebar: home_sidebar
 
-
-
+summary: "A database for pros"
+description: "A database for pros"
 nb_path: "index.ipynb"
 ---
 <!--
@@ -31,7 +31,31 @@ nb_path: "index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This file will become your README and also the index of your documentation.</p>
+<h2 id="Setup-environment-and-nbdev">Setup environment and <code>nbdev</code><a class="anchor-link" href="#Setup-environment-and-nbdev"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Tested with Ubuntu (wsl)<br>
+<code>conda create -n prodb python=3.9 jupyter pip</code><br>
+<code>conda activate prodb</code><br>
+<code>git clone https://github.com/lukexyz/prodb.git</code><br>
+<code>pip install -r requirements.txt</code>  </li>
+</ul>
+<ul>
+<li>Install githooks from project folder<br>
+<code>nbdev_install_git_hooks</code>  </li>
+</ul>
+<ul>
+<li><strong>Build lib</strong> from notebooks<br>
+<code>nbdev_build_lib</code> </li>
+</ul>
+<ul>
+<li><strong>Build docs</strong> from notebooks<br>
+<code>nbdev_build_docs</code> </li>
+</ul>
 
 </div>
 </div>
@@ -57,7 +81,7 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Fill me in please! Don't forget code examples:</p>
+<p>Don't forget code examples:</p>
 
 </div>
 </div>
