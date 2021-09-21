@@ -1,10 +1,24 @@
-# nbdev template
+# Prodb 
+
+
+
+This file will become your README and also the index of your documentation.
+
+## Install
+
+`pip install prodb`
+
+## How to use
+
+Fill me in please! Don't forget code examples:
 
 ```
-$ conda create -n prodb python=3.9 jupyter pip
-$ conda activate prodb
-$ git clone https://github.com/lukexyz/prodb.git
-$ pip install -r requirements.txt   # or $ conda install -c fastai nbdev
-# install githooks from project folder
-$ nbdev_install_git_hooks
+1+1
 ```
+
+
+
+
+    2
+
+
