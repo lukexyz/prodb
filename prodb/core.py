@@ -28,10 +28,11 @@ df.head()
 
 # Cell
 
-def insert_row(df, data):
+def insert_row(df, data, db_path='db.csv'):
     new_row = pd.Series({'time_utc' : strftime("%H:%M:%S", gmtime()),
                          'name':data['name'],
                          'location': data['location'],
                          'score': data['score']})
     df = df.append(new_row, ignore_index=True)
+    df.to_csv(db_path, index=None)
     return df

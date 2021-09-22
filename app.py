@@ -3,9 +3,9 @@ import pandas as pd
 from prodb.core import generate_db, insert_row
 
 st.header('Original dataframe')
-if st.button('Reset db'): generate_db()
+if st.button('♻️ Reset db'): generate_db()
+
 df = pd.read_csv('db.csv')
-st.write(df)
 
 # ================= input ================= #
 
@@ -18,4 +18,6 @@ if submit:
     data = {'name':name, 'location': 'NZ', 'score':score}
     df = insert_row(df, data)
 
-st.write(df)
+
+st.write(df.tail(10))
+
