@@ -2,6 +2,9 @@
 > A database for pros
 
 
+#### 📝 Documentation
+> 🔗 https://lukexyz.github.io/prodb/ (github pages)
+
 ## Setup environment and `nbdev`
 First time only:
 
