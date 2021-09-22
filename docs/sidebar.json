@@ -2,6 +2,7 @@
   "prodb": {
     "Overview": "/",
     "Prodb API details": "core.html",
-    "Prodb Card example": "card.html"
+    "Prodb Card example": "card.html",
+    "Title": "testlib.html"
   }
 }

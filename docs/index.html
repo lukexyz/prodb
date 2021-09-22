@@ -31,7 +31,8 @@ nb_path: "index.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Setup-environment-and-nbdev">Setup environment and <code>nbdev</code><a class="anchor-link" href="#Setup-environment-and-nbdev"> </a></h2>
+<h2 id="Setup-environment-and-nbdev">Setup environment and <code>nbdev</code><a class="anchor-link" href="#Setup-environment-and-nbdev"> </a></h2><p>First time only:</p>
+
 </div>
 </div>
 </div>
@@ -39,23 +40,26 @@ nb_path: "index.ipynb"
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Tested with Ubuntu (wsl)<br>
-<code>conda create -n prodb python=3.9 jupyter pip</code><br>
-<code>conda activate prodb</code><br>
-<code>git clone https://github.com/lukexyz/prodb.git</code><br>
-<code>pip install -r requirements.txt</code>  </li>
+<code>conda create -n prodb python=3.9 jupyter pip
+conda activate prodb
+git clone https://github.com/lukexyz/prodb.git
+pip install -r requirements.txt</code>  </li>
 </ul>
 <ul>
 <li>Install githooks from project folder<br>
 <code>nbdev_install_git_hooks</code>  </li>
 </ul>
-<ul>
-<li><strong>Build lib</strong> from notebooks<br>
-<code>nbdev_build_lib</code> </li>
-</ul>
-<ul>
-<li><strong>Build docs</strong> from notebooks<br>
-<code>nbdev_build_docs</code> </li>
-</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Frequently during develoment:</p>
+<h3 id="1.-&#127959;&#65039;-Build-lib-from-notebooks">1. &#127959;&#65039; <strong>Build lib</strong> from notebooks<a class="anchor-link" href="#1.-&#127959;&#65039;-Build-lib-from-notebooks"> </a></h3><blockquote><p><code>nbdev_build_lib</code></p>
+</blockquote>
+<h3 id="2.-&#128221;-Build-docs-from-notebooks">2. &#128221; <strong>Build docs</strong> from notebooks<a class="anchor-link" href="#2.-&#128221;-Build-docs-from-notebooks"> </a></h3><blockquote><p><code>nbdev_build_docs</code></p>
+</blockquote>
 
 </div>
 </div>
