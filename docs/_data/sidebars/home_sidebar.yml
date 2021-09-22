@@ -10,10 +10,10 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Prodb API details
+      title: 00 Prodb API details
       url: core.html
     - output: web,pdf
-      title: Prodb Card example
+      title: '01 Prodb Card Example '
       url: card.html
     - output: web,pdf
       title: Title
