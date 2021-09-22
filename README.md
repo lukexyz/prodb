@@ -35,7 +35,7 @@ Frequently during develoment:
 
 Don't forget code examples:
 
-```python
+```
 1+1
 ```
 
