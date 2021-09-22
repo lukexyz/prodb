@@ -1,5 +1,5 @@
 # Prodb 
-> A database for pros
+> .csv database for pros
 
 
 #### 📝 Documentation
@@ -35,7 +35,7 @@ Frequently during develoment:
 
 Don't forget code examples:
 
-```
+```python
 1+1
 ```
 

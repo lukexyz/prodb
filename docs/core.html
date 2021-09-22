@@ -26,20 +26,6 @@ nb_path: "00_core.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>-&gt; created data.csv
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -149,7 +135,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="generate_db" class="doc_header"><code>generate_db</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/core.py#L17" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>generate_db</code>()</p>
+<h4 id="generate_db" class="doc_header"><code>generate_db</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/core.py#L17" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>generate_db</code>(<strong><code>prefill</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 
 </div>
@@ -166,16 +152,27 @@ nb_path: "00_core.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">generate_db</span><span class="p">(</span><span class="n">prefill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;db.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 <div class="output_wrapper">
 <div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>-&gt; created data.csv
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
@@ -211,14 +208,14 @@ nb_path: "00_core.ipynb"
       <td>Sam</td>
       <td>UK</td>
       <td>0</td>
-      <td>13:46:05</td>
+      <td>16:33:26</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Grant</td>
       <td>NZ</td>
       <td>30</td>
-      <td>13:46:05</td>
+      <td>16:33:26</td>
     </tr>
   </tbody>
 </table>
@@ -244,7 +241,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="insert_row" class="doc_header"><code>insert_row</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/core.py#L31" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>insert_row</code>(<strong><code>df</code></strong>, <strong><code>data</code></strong>)</p>
+<h4 id="insert_row" class="doc_header"><code>insert_row</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/core.py#L30" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>insert_row</code>(<strong><code>df</code></strong>, <strong><code>data</code></strong>, <strong><code>db_path</code></strong>=<em><code>'db.csv'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -320,14 +317,14 @@ nb_path: "00_core.ipynb"
       <td>Sam</td>
       <td>UK</td>
       <td>0</td>
-      <td>13:46:05</td>
+      <td>16:33:26</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Grant</td>
       <td>NZ</td>
       <td>30</td>
-      <td>13:46:05</td>
+      <td>16:33:26</td>
     </tr>
   </tbody>
 </table>
@@ -370,21 +367,21 @@ nb_path: "00_core.ipynb"
       <td>Sam</td>
       <td>UK</td>
       <td>0</td>
-      <td>13:46:05</td>
+      <td>16:33:26</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Grant</td>
       <td>NZ</td>
       <td>30</td>
-      <td>13:46:05</td>
+      <td>16:33:26</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Geo</td>
       <td>JP</td>
       <td>5</td>
-      <td>13:46:08</td>
+      <td>16:33:27</td>
     </tr>
   </tbody>
 </table>
@@ -440,47 +437,40 @@ nb_path: "00_core.ipynb"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>time_utc</th>
       <th>name</th>
       <th>location</th>
       <th>score</th>
+      <th>time_utc</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>13:29:36</td>
       <td>Sam</td>
       <td>UK</td>
       <td>0</td>
+      <td>13:54:38</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>13:29:36</td>
       <td>Grant</td>
       <td>NZ</td>
       <td>30</td>
+      <td>13:54:38</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>13:29:36</td>
       <td>Geo</td>
       <td>JP</td>
       <td>5</td>
+      <td>13:57:32</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>13:29:36</td>
       <td>Bill</td>
       <td>JP</td>
       <td>None</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>13:29:39</td>
-      <td>Bill</td>
-      <td>JP</td>
-      <td>None</td>
+      <td>13:57:36</td>
     </tr>
   </tbody>
 </table>
