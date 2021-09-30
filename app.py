@@ -19,7 +19,7 @@ def main():
     with st.form(key='columns_in_form'):
         c1, c2, c3 = st.columns((1, 1, 4))
         name = c1.text_input('Name', 'Luke')
-        mood = c2.selectbox('Mood', ('😊 😵 🌎 🐶 👹'.split(" ")))
+        mood = c2.selectbox('Mood', ('😊 😵 👹 🌎'.split(" ")))
         message = c3.text_input('Message', 'hello')
         submitted = st.form_submit_button('➡️ Submit')
         if submitted:
@@ -27,7 +27,7 @@ def main():
             df = insert_row(df, data)
 
     df['human'] = df.time_utc.apply(lambda x: arrow.get(x).humanize())
-    st.write(df.tail(8))
+    st.write(df[['mood', 'name', 'human', 'message']].tail(8))
 
     col0, col1, col2, col3 = st.columns(4)
     file_size = os.path.getsize(dbpath)
