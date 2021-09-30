@@ -14,27 +14,18 @@ def main():
 
     # ================= input ================= #
 
-
-    form = st.form(key='my-form')
-    name = form.text_input('Enter your name', 'Luke')
-    score = form.number_input('Enter score', 5*randrange(0, 21))
-    submit = form.form_submit_button('➡️ Insert row')
-
-    if submit:
-        data = {'name':name, 'location': 'NZ', 'score':score}
-        df = insert_row(df, data)
-
     # upto: fix submission code sequence
     with st.form(key='columns_in_form'):
         c1, c2 = st.columns(2)
-        name2 = c1.text_input('Enter name', 'Luke')
-        score2 = c2.number_input('Enter score', 5*randrange(0, 21))
+        name = c1.text_input('Enter name', 'Luke')
+        #score2 = c2.number_input('Enter score', 5*randrange(0, 21))
+        score = c2.number_input('Enter score', 5)
         submitted = st.form_submit_button('➡️ Submitted')
         if submitted:
-            data = {'name':name2, 'location': 'NZ', 'score':score2}
+            data = {'name':name, 'location': 'NZ', 'score':score}
             df = insert_row(df, data)
 
-    st.write(df.tail(10))
+    st.write(df.tail(8))
 
     col0, col1, col2, col3 = st.columns(4)
     file_size = os.path.getsize(dbpath)
