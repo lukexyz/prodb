@@ -17,9 +17,9 @@ def main():
 
     # upto: fix submission code sequence
     with st.form(key='columns_in_form'):
-        c1, c2, c3 = st.columns(3)
-        name = c1.text_input('Enter name', 'Luke')
-        mood = c2.selectbox('Mood', ('😊', '😵', '👹'))
+        c1, c2, c3 = st.columns((1, 1, 4))
+        name = c1.text_input('Name', 'Luke')
+        mood = c2.selectbox('Mood', ('😊 😵 🌎 🐶 👹'.split(" ")))
         message = c3.text_input('Message', 'hello')
         submitted = st.form_submit_button('➡️ Submit')
         if submitted:
