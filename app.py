@@ -17,12 +17,13 @@ def main():
 
     # upto: fix submission code sequence
     with st.form(key='columns_in_form'):
-        c1, c2 = st.columns(2)
+        c1, c2, c3 = st.columns(3)
         name = c1.text_input('Enter name', 'Luke')
-        score = c2.number_input('Enter score', 5)
-        submitted = st.form_submit_button('➡️ Submit row')
+        mood = c2.selectbox('Mood', ('😊', '😵', '👹'))
+        message = c3.text_input('Message', 'hello')
+        submitted = st.form_submit_button('➡️ Submit')
         if submitted:
-            data = {'name':name, 'location': 'NZ', 'score':score}
+            data = {'name':name, 'mood': mood, 'message':message}
             df = insert_row(df, data)
 
     df['human'] = df.time_utc.apply(lambda x: arrow.get(x).humanize())
