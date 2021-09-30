@@ -18,9 +18,8 @@ def main():
     with st.form(key='columns_in_form'):
         c1, c2 = st.columns(2)
         name = c1.text_input('Enter name', 'Luke')
-        #score2 = c2.number_input('Enter score', 5*randrange(0, 21))
         score = c2.number_input('Enter score', 5)
-        submitted = st.form_submit_button('➡️ Submitted')
+        submitted = st.form_submit_button('➡️ Submit row')
         if submitted:
             data = {'name':name, 'location': 'NZ', 'score':score}
             df = insert_row(df, data)
