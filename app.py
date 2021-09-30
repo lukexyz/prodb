@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 import os.path
-from random import randrange
+import arrow
+
 from prodb.core import generate_db, insert_row
 
 def main():
@@ -24,6 +25,7 @@ def main():
             data = {'name':name, 'location': 'NZ', 'score':score}
             df = insert_row(df, data)
 
+    df['human'] = df.time_utc.apply(lambda x: arrow.get(x).humanize())
     st.write(df.tail(8))
 
     col0, col1, col2, col3 = st.columns(4)
