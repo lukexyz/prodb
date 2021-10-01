@@ -28,6 +28,11 @@ nbdev_install_git_hooks
 ```
 make release
 ```
+WSL error work around for: [Errno 16] Device or resource busy
+`ubuntu` `make release`
+`windows` `python setup.py sdist bdist_wheel`  
+`ubuntu` `twine upload --repository pypi dist/*`
+
 
 Frequently during develoment:  
 ### 1. 🏗️ **Build lib** from notebooks  

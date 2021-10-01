@@ -63,6 +63,10 @@ pip install -r requirements.txt</code></pre>
 <li><p>Package auto-manager</p>
 
 <pre><code>make release</code></pre>
+<p>WSL error work around for: [Errno 16] Device or resource busy
+<code>ubuntu</code> <code>make release</code>
+<code>windows</code> <code>python setup.py sdist bdist_wheel</code><br>
+<code>ubuntu</code> <code>twine upload --repository pypi dist/*</code></p>
 </li>
 </ul>
 
