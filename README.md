@@ -12,7 +12,7 @@ First time only:
 
 * Ubuntu / WSL
 ```
-conda create -n prodb python=3.9 jupyter pip  
+conda create -n prodb python=3.9 jupyter pip nbdev twine
 conda activate prodb  
 git clone https://github.com/lukexyz/prodb.git  
 pip install -r requirements.txt  
@@ -22,6 +22,11 @@ pip install -r requirements.txt
 * Install githooks from project folder  
 ```
 nbdev_install_git_hooks
+```
+
+* Package auto-manager
+```
+make release
 ```
 
 Frequently during develoment:  

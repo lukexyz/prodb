@@ -49,15 +49,20 @@ nb_path: "index.ipynb"
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Ubuntu / WSL
-<pre><code>conda create -n prodb python=3.9 jupyter pip  
+<pre><code>conda create -n prodb python=3.9 jupyter pip nbdev twine
 conda activate prodb  
 git clone https://github.com/lukexyz/prodb.git  
 pip install -r requirements.txt</code></pre>
 </li>
 </ul>
 <ul>
-<li>Install githooks from project folder  
+<li><p>Install githooks from project folder</p>
+
 <pre><code>nbdev_install_git_hooks</code></pre>
+</li>
+<li><p>Package auto-manager</p>
+
+<pre><code>make release</code></pre>
 </li>
 </ul>
 
