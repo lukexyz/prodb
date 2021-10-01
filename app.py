@@ -12,6 +12,7 @@ def main():
     t1.title('🦄 Pro db')
     dbpath = 'db.csv'
     if not os.path.isfile(dbpath): generate_db()
+
     if t2.button('⬆️ Reset db'): generate_db()
     df = pd.read_csv(dbpath)
 
@@ -36,12 +37,9 @@ def main():
 
     col0, col1, col2, col3 = st.columns(4)
     file_size = os.path.getsize(dbpath)
-    col2.metric(f"💾 {dbpath}", f"{df.shape[0]}", "total rows")
-    col3.metric("📁 filesize", f"{file_size/1000:0.2f}", 'kb')
+    col0.metric(f"💾 {dbpath}", f"{df.shape[0]}", "total rows")
+    col1.metric("📁 filesize", f"{file_size/1000:0.2f}", 'kb')
 
-    st.text("")
-    st.text("")
-    st.text("")
     f1, f2 = st.columns((4,1))
     image = Image.open('docs/assets/images/company_logo.png')
     f2.image(image)
