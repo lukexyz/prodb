@@ -135,7 +135,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="generate_db" class="doc_header"><code>generate_db</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/core.py#L17" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>generate_db</code>(<strong><code>prefill</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="generate_db" class="doc_header"><code>generate_db</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/core.py#L18" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>generate_db</code>(<strong><code>prefill</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 
 </div>
@@ -197,8 +197,8 @@ nb_path: "00_core.ipynb"
     <tr style="text-align: right;">
       <th></th>
       <th>name</th>
-      <th>location</th>
-      <th>score</th>
+      <th>mood</th>
+      <th>message</th>
       <th>time_utc</th>
     </tr>
   </thead>
@@ -206,16 +206,16 @@ nb_path: "00_core.ipynb"
     <tr>
       <th>0</th>
       <td>Sam</td>
-      <td>UK</td>
-      <td>0</td>
-      <td>16:33:26</td>
+      <td>😊</td>
+      <td>hi</td>
+      <td>2021-09-30 22:23:32</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Grant</td>
-      <td>NZ</td>
-      <td>30</td>
-      <td>16:33:26</td>
+      <td>😵</td>
+      <td>hello</td>
+      <td>2021-09-30 22:23:32</td>
     </tr>
   </tbody>
 </table>
@@ -241,7 +241,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="insert_row" class="doc_header"><code>insert_row</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/core.py#L30" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>insert_row</code>(<strong><code>df</code></strong>, <strong><code>data</code></strong>, <strong><code>db_path</code></strong>=<em><code>'db.csv'</code></em>)</p>
+<h4 id="insert_row" class="doc_header"><code>insert_row</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/core.py#L32" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>insert_row</code>(<strong><code>df</code></strong>, <strong><code>data</code></strong>, <strong><code>db_path</code></strong>=<em><code>'db.csv'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -271,7 +271,7 @@ nb_path: "00_core.ipynb"
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;db.csv&#39;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Geo&#39;</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="s1">&#39;JP&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Geo&#39;</span><span class="p">,</span> <span class="s1">&#39;mood&#39;</span><span class="p">:</span> <span class="s1">&#39;👹&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">:</span><span class="s1">&#39;hi&#39;</span><span class="p">}</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">insert_row</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
@@ -306,8 +306,8 @@ nb_path: "00_core.ipynb"
     <tr style="text-align: right;">
       <th></th>
       <th>name</th>
-      <th>location</th>
-      <th>score</th>
+      <th>mood</th>
+      <th>message</th>
       <th>time_utc</th>
     </tr>
   </thead>
@@ -315,16 +315,16 @@ nb_path: "00_core.ipynb"
     <tr>
       <th>0</th>
       <td>Sam</td>
-      <td>UK</td>
-      <td>0</td>
-      <td>16:33:26</td>
+      <td>😊</td>
+      <td>hi</td>
+      <td>2021-09-30 22:23:32</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Grant</td>
-      <td>NZ</td>
-      <td>30</td>
-      <td>16:33:26</td>
+      <td>😵</td>
+      <td>hello</td>
+      <td>2021-09-30 22:23:32</td>
     </tr>
   </tbody>
 </table>
@@ -356,8 +356,8 @@ nb_path: "00_core.ipynb"
     <tr style="text-align: right;">
       <th></th>
       <th>name</th>
-      <th>location</th>
-      <th>score</th>
+      <th>mood</th>
+      <th>message</th>
       <th>time_utc</th>
     </tr>
   </thead>
@@ -365,23 +365,23 @@ nb_path: "00_core.ipynb"
     <tr>
       <th>0</th>
       <td>Sam</td>
-      <td>UK</td>
-      <td>0</td>
-      <td>16:33:26</td>
+      <td>😊</td>
+      <td>hi</td>
+      <td>2021-09-30 22:23:32</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Grant</td>
-      <td>NZ</td>
-      <td>30</td>
-      <td>16:33:26</td>
+      <td>😵</td>
+      <td>hello</td>
+      <td>2021-09-30 22:23:32</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Geo</td>
-      <td>JP</td>
-      <td>5</td>
-      <td>16:33:27</td>
+      <td>👹</td>
+      <td>hi</td>
+      <td>2021-09-30 22:23:44</td>
     </tr>
   </tbody>
 </table>
@@ -403,7 +403,7 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Bill&#39;</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="s1">&#39;JP&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">:</span><span class="kc">None</span><span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Bill&#39;</span><span class="p">,</span> <span class="s1">&#39;mood&#39;</span><span class="p">:</span> <span class="s1">&#39;👹&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">:</span><span class="s1">&#39;hi&#39;</span><span class="p">}</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">insert_row</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
@@ -438,8 +438,8 @@ nb_path: "00_core.ipynb"
     <tr style="text-align: right;">
       <th></th>
       <th>name</th>
-      <th>location</th>
-      <th>score</th>
+      <th>mood</th>
+      <th>message</th>
       <th>time_utc</th>
     </tr>
   </thead>
@@ -447,30 +447,30 @@ nb_path: "00_core.ipynb"
     <tr>
       <th>0</th>
       <td>Sam</td>
-      <td>UK</td>
-      <td>0</td>
-      <td>13:54:38</td>
+      <td>😊</td>
+      <td>hi</td>
+      <td>2021-09-30 22:23:32</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Grant</td>
-      <td>NZ</td>
-      <td>30</td>
-      <td>13:54:38</td>
+      <td>😵</td>
+      <td>hello</td>
+      <td>2021-09-30 22:23:32</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Geo</td>
-      <td>JP</td>
-      <td>5</td>
-      <td>13:57:32</td>
+      <td>👹</td>
+      <td>hi</td>
+      <td>2021-09-30 22:23:44</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Bill</td>
-      <td>JP</td>
-      <td>None</td>
-      <td>13:57:36</td>
+      <td>👹</td>
+      <td>hi</td>
+      <td>2021-09-30 22:23:51</td>
     </tr>
   </tbody>
 </table>

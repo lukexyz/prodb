@@ -1,8 +1,3 @@
-
-<p align="center">
-  <img src="https://github.com/lukexyz/prodb/blob/master/img/prodb.png?raw=true">
-</p>
-
 # Prodb 
 > .csv database for pros
 
@@ -15,16 +10,19 @@
 ## Setup environment and `nbdev`
 First time only:
 
-* Tested with Ubuntu (wsl)  
-`
-conda create -n prodb python=3.9 jupyter pip
-conda activate prodb
-git clone https://github.com/lukexyz/prodb.git
-pip install -r requirements.txt`  
+* Ubuntu / WSL
+```
+conda create -n prodb python=3.9 jupyter pip  
+conda activate prodb  
+git clone https://github.com/lukexyz/prodb.git  
+pip install -r requirements.txt  
+```
   
   
 * Install githooks from project folder  
-`nbdev_install_git_hooks`  
+```
+nbdev_install_git_hooks
+```
 
 Frequently during develoment:  
 ### 1. 🏗️ **Build lib** from notebooks  
@@ -37,18 +35,3 @@ Frequently during develoment:
 ## Install
 
 `pip install prodb`
-
-## How to use
-
-Don't forget code examples:
-
-```python
-1+1
-```
-
-
-
-
-    2
-
-

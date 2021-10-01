@@ -16,7 +16,7 @@ entries:
       title: '01 Prodb Card Example '
       url: card.html
     - output: web,pdf
-      title: Title
+      title: 02 Import Prodb
       url: testlib.html
     output: web
     title: prodb
