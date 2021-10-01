@@ -12,14 +12,11 @@ def main():
     t1.title('🦄 Pro db')
     dbpath = 'db.csv'
     if not os.path.isfile(dbpath): generate_db()
-
+    
     if t2.button('⬆️ Reset db'): generate_db()
     df = pd.read_csv(dbpath)
 
-
     # ================= input ================= #
-
-
     with st.form(key='columns_in_form'):
         c1, c2, c3 = st.columns((1, 1, 4))
         name = c1.text_input('Name', 'Luke')
@@ -30,11 +27,10 @@ def main():
             data = {'name':name, 'mood': mood, 'message':message}
             df = insert_row(df, data)
 
-    file_size = os.path.getsize(dbpath)
-
     df['human'] = df.time_utc.apply(lambda x: arrow.get(x).humanize())
     st.write(df[['name', 'human', 'mood', 'message']].tail(8))
 
+    # ================= metrics ================= #
     col0, col1, col2, col3 = st.columns(4)
     file_size = os.path.getsize(dbpath)
     col0.metric(f"💾 {dbpath}", f"{df.shape[0]}", "total rows")
