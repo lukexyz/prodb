@@ -31,99 +31,18 @@ nb_path: "nbs/00_core.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Example-(temp)">Example (temp)<a class="anchor-link" href="#Example-(temp)"> </a></h2>
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="say_hello" class="doc_header"><code>say_hello</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/core.py#L6" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>say_hello</code>(<strong><code>to</code></strong>)</p>
-</blockquote>
-<p>Say hello to somebody</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">say_hello</span><span class="p">(</span><span class="s1">&#39;Luke&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Hello Luke!&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">say_hello</span><span class="p">(</span><span class="s1">&#39;Luke&#39;</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;Hello Luke!&#39;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Prodb-API">Prodb API<a class="anchor-link" href="#Prodb-API"> </a></h2><p>Create pandas dataframe for manipulation</p>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.0-Generate-Db">1.0 Generate Db<a class="anchor-link" href="#1.0-Generate-Db"> </a></h2><p>Initialise database with <a href="/prodb/core.html#generate_db"><code>generate_db</code></a> call.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -135,7 +54,7 @@ nb_path: "nbs/00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="generate_db" class="doc_header"><code>generate_db</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/core.py#L19" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>generate_db</code>(<strong><code>dbpath</code></strong>=<em><code>'db.csv'</code></em>, <strong><code>prefill</code></strong>=<em><code>False</code></em>)</p>
+<h4 id="generate_db" class="doc_header"><code>generate_db</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/core.py#L14" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>generate_db</code>(<strong><code>dbpath</code></strong>=<em><code>'db.csv'</code></em>, <strong><code>cols</code></strong>=<em><code>['col1', 'col2']</code></em>, <strong><code>prefill</code></strong>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Create example database</p>
 
@@ -152,6 +71,73 @@ nb_path: "nbs/00_core.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">generate_db</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;c1&#39;</span><span class="p">,</span> <span class="s1">&#39;c4&#39;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;db.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>✓💾 db.csv (6 kb)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>c1</th>
+      <th>c4</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}
@@ -217,14 +203,14 @@ nb_path: "nbs/00_core.ipynb"
       <td>Sam</td>
       <td>😊</td>
       <td>hi</td>
-      <td>2021-10-01 17:20:14</td>
+      <td>2021-11-02 19:53:29</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Grant</td>
       <td>😵</td>
       <td>hello</td>
-      <td>2021-10-01 17:20:14</td>
+      <td>2021-11-02 19:53:29</td>
     </tr>
   </tbody>
 </table>
@@ -239,6 +225,12 @@ nb_path: "nbs/00_core.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.0-Insert-Row">2.0 Insert Row<a class="anchor-link" href="#2.0-Insert-Row"> </a></h2>
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -250,7 +242,7 @@ nb_path: "nbs/00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="insert_row" class="doc_header"><code>insert_row</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/core.py#L35" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>insert_row</code>(<strong><code>df</code></strong>, <strong><code>data</code></strong>, <strong><code>dbpath</code></strong>=<em><code>'db.csv'</code></em>)</p>
+<h4 id="insert_row" class="doc_header"><code>insert_row</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/core.py#L32" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>insert_row</code>(<strong><code>df</code></strong>, <strong><code>data</code></strong>, <strong><code>dbpath</code></strong>=<em><code>'db.csv'</code></em>)</p>
 </blockquote>
 
 </div>
@@ -277,10 +269,7 @@ nb_path: "nbs/00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;db.csv&#39;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Geo&#39;</span><span class="p">,</span> <span class="s1">&#39;mood&#39;</span><span class="p">:</span> <span class="s1">&#39;👹&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">:</span><span class="s1">&#39;hi&#39;</span><span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;George&#39;</span><span class="p">,</span> <span class="s1">&#39;mood&#39;</span><span class="p">:</span> <span class="s1">&#39;👹&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">:</span><span class="s1">&#39;hi&#39;</span><span class="p">}</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">insert_row</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
@@ -326,14 +315,28 @@ nb_path: "nbs/00_core.ipynb"
       <td>Sam</td>
       <td>😊</td>
       <td>hi</td>
-      <td>2021-10-01 17:20:14</td>
+      <td>2021-11-02 19:53:29</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Grant</td>
       <td>😵</td>
       <td>hello</td>
-      <td>2021-10-01 17:20:14</td>
+      <td>2021-11-02 19:53:29</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>George</td>
+      <td>👹</td>
+      <td>hi</td>
+      <td>2021-11-02 19:53:32</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>George</td>
+      <td>👹</td>
+      <td>hi</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -341,6 +344,34 @@ nb_path: "nbs/00_core.ipynb"
 </div>
 
 </div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time_utc&#39;</span> <span class="p">:</span> <span class="n">arrow</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;YYYY-MM-DD HH:mm:ss&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Luke&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;mood&#39;</span><span class="p">:</span> <span class="s1">&#39;😵&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;hello from London, UK&#39;</span><span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">insert_row</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
 
 <div class="output_area">
 
@@ -376,21 +407,42 @@ nb_path: "nbs/00_core.ipynb"
       <td>Sam</td>
       <td>😊</td>
       <td>hi</td>
-      <td>2021-10-01 17:20:14</td>
+      <td>2021-11-02 19:53:29</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Grant</td>
       <td>😵</td>
       <td>hello</td>
-      <td>2021-10-01 17:20:14</td>
+      <td>2021-11-02 19:53:29</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Geo</td>
+      <td>George</td>
       <td>👹</td>
       <td>hi</td>
-      <td>2021-10-01 17:20:32</td>
+      <td>2021-11-02 19:53:32</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>George</td>
+      <td>👹</td>
+      <td>hi</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>George</td>
+      <td>👹</td>
+      <td>hi</td>
+      <td>2021-11-02 20:20:31</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Luke</td>
+      <td>😵</td>
+      <td>hello from London, UK</td>
+      <td>2021-11-02 20:21:12</td>
     </tr>
   </tbody>
 </table>
@@ -458,28 +510,49 @@ nb_path: "nbs/00_core.ipynb"
       <td>Sam</td>
       <td>😊</td>
       <td>hi</td>
-      <td>2021-10-01 17:20:14</td>
+      <td>2021-11-02 19:53:29</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Grant</td>
       <td>😵</td>
       <td>hello</td>
-      <td>2021-10-01 17:20:14</td>
+      <td>2021-11-02 19:53:29</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Geo</td>
+      <td>George</td>
       <td>👹</td>
       <td>hi</td>
-      <td>2021-10-01 17:20:32</td>
+      <td>2021-11-02 19:53:32</td>
     </tr>
     <tr>
       <th>3</th>
+      <td>George</td>
+      <td>👹</td>
+      <td>hi</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>George</td>
+      <td>👹</td>
+      <td>hi</td>
+      <td>2021-11-02 20:20:31</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Luke</td>
+      <td>😵</td>
+      <td>hello from London, UK</td>
+      <td>2021-11-02 20:21:12</td>
+    </tr>
+    <tr>
+      <th>6</th>
       <td>Bill</td>
       <td>👹</td>
       <td>hi</td>
-      <td>2021-10-01 17:20:36</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
