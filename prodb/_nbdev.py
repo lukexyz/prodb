@@ -2,8 +2,7 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"say_hello": "00_core.ipynb",
-         "generate_db": "00_core.ipynb",
+index = {"generate_db": "00_core.ipynb",
          "insert_row": "00_core.ipynb",
          "Card": "01_card.ipynb",
          "Deck": "01_card.ipynb",
