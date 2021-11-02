@@ -2,6 +2,10 @@
 > .csv database for pros
 
 
+<p align="center">
+  <img src="https://github.com/lukexyz/prodb/blob/master/img/prodb.png?raw=true">
+</p>
+
 #### 🌐 Demo
 > 🔗 https://share.streamlit.io/lukexyz/prodb/app.py
 #### 📝 Documentation
@@ -29,9 +33,11 @@ nbdev_install_git_hooks
 make release
 ```
 WSL error work around for: [Errno 16] Device or resource busy
-`ubuntu` `make release`
-`windows` `python setup.py sdist bdist_wheel`  
-`ubuntu` `twine upload --repository pypi dist/*`
+```
+ ubuntu $ make release
+windows > python setup.py sdist bdist_wheel
+ ubuntu $ twine upload --repository pypi dist/*
+```
 
 
 Frequently during develoment:  
