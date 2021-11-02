@@ -20,8 +20,8 @@ def main():
     with st.form(key='columns_in_form'):
         c1, c2, c3 = st.columns((1, 1, 4))
         name = c1.text_input('Name', 'Luke')
-        mood = c2.selectbox('Mood', ('😊 😵 👹 🌎'.split(" ")))
-        message = c3.text_input('Message', 'hello friends greetings to all')
+        mood = c2.selectbox('Mood', ('🌎 😊 😵 👹'.split(" ")))
+        message = c3.text_input('Message', 'Hello from London, Uk')
         submitted = st.form_submit_button('➡️ Submit')
         if submitted:
             data = {'name':name, 'mood': mood, 'message':message}
