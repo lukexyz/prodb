@@ -3,6 +3,7 @@ import pandas as pd
 import os.path
 import arrow
 from PIL import Image
+import random
 
 from prodb.core import generate_db, insert_row
 
@@ -20,8 +21,10 @@ def main():
     with st.form(key='columns_in_form'):
         c1, c2, c3 = st.columns((1, 1, 4))
         name = c1.text_input('Name', 'Luke')
-        mood = c2.selectbox('Mood', ('🌎 😊 😵 👹'.split(" ")))
-        message = c3.text_input('Message', 'Hello from London, Uk')
+        emoji = '🌎 😊 😵 👹'.split(" ")
+        random.shuffle(emoji)
+        mood = c2.selectbox('Mood', emoji)
+        message = c3.text_input('Message', 'hello from London, Uk')
         submitted = st.form_submit_button('➡️ Submit')
         if submitted:
             data = {'name':name, 'mood': mood, 'message':message}
