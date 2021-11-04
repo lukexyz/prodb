@@ -16,10 +16,13 @@ First time only:
 
 * Ubuntu / WSL
 ```
-conda create -n prodb python=3.9 jupyter pip nbdev twine
+conda create -n prodb python=3.9 jupyter pip 
 conda activate prodb  
 git clone https://github.com/lukexyz/prodb.git  
 pip install -r requirements.txt  
+
+pip install nbdev twine  # for ubuntu build and release
+pip install streamlit    # run streamlit example apps
 ```
   
   
