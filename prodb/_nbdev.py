@@ -4,6 +4,9 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"generate_db": "00_core.ipynb",
          "insert_row": "00_core.ipynb",
+         "insert_rows": "00_core.ipynb",
+         "utc_now": "00_core.ipynb",
+         "display_readable": "00_core.ipynb",
          "Card": "01_card.ipynb",
          "Deck": "01_card.ipynb",
          "Hand": "01_card.ipynb",
