@@ -7,15 +7,19 @@ import random
 
 from prodb.core import generate_db, insert_row
 
+
+def utc_now():
+    return arrow.utcnow().format('YYYY-MM-DD HH:mm:ss')
+
+
 def main():
-    
     t1, t2 = st.columns((4,1))
     t1.title('🦄 Pro db')
     dbpath = 'db.csv'
-    if not os.path.isfile(dbpath): generate_db()
-    
-    if t2.button('⬆️ Reset db'): generate_db()
-    df = pd.read_csv(dbpath)
+    cols = 'name mood message time_utc'.split()
+
+    if not os.path.isfile(dbpath): df = generate_db(dbpath=dbpath, cols=cols)
+    if t2.button('⬆️ Reset db'): df = generate_db(dbpath=dbpath, cols=cols)
 
     # ================= input ================= #
     with st.form(key='columns_in_form'):
@@ -27,7 +31,8 @@ def main():
         message = c3.text_input('Message', 'hello from London, Uk')
         submitted = st.form_submit_button('➡️ Submit')
         if submitted:
-            data = {'name':name, 'mood': mood, 'message':message}
+            data = {'name':name, 'mood': mood, 
+                    'message':message, 'time_utc':utc_now()}
             df = insert_row(df, data)
 
     df['human'] = df.time_utc.apply(lambda x: arrow.get(x).humanize())
