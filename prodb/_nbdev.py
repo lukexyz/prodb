@@ -6,14 +6,14 @@ index = {"generate_db": "00_core.ipynb",
          "insert_row": "00_core.ipynb",
          "insert_rows": "00_core.ipynb",
          "utc_now": "00_core.ipynb",
-         "display_readable": "00_core.ipynb",
-         "Card": "01_card.ipynb",
-         "Deck": "01_card.ipynb",
-         "Hand": "01_card.ipynb",
-         "find_defining_class": "01_card.ipynb"}
+         "readable_df": "00_core.ipynb",
+         "get_json_from_query": "03_examples.ipynb",
+         "get_current_weather": "03_examples.ipynb",
+         "df_from_loc": "03_examples.ipynb",
+         "visit_city": "03_examples.ipynb"}
 
 modules = ["core.py",
-           "card.py"]
+           "examples.py"]
 
 doc_url = "https://lukexyz.github.io/prodb/"
 

@@ -5,13 +5,7 @@ import arrow
 from PIL import Image
 import random
 
-from prodb.core import generate_db, insert_row, utc_now
-
-def readable_df(df, max_rows=8):
-    if 'time_utc' in df.columns:
-        df['human_time'] = df.time_utc.apply(lambda x: arrow.get(x).humanize())
-    return df.tail(8)
-
+from prodb.core import generate_db, insert_row, utc_now, readable_df
 
 def main():
     t1, t2 = st.columns((4,1))

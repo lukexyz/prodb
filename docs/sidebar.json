@@ -2,7 +2,6 @@
   "prodb": {
     "Overview": "/",
     "00 Prodb API details": "core.html",
-    "01 Prodb Card Example ": "card.html",
-    "02 Import Prodb": "testlib.html"
+    "\ud83c\udf1e Example Weather App": "examples.html"
   }
 }

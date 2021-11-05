@@ -13,11 +13,8 @@ entries:
       title: 00 Prodb API details
       url: core.html
     - output: web,pdf
-      title: '01 Prodb Card Example '
-      url: card.html
-    - output: web,pdf
-      title: 02 Import Prodb
-      url: testlib.html
+      title: "\U0001F31E Example Weather App"
+      url: examples.html
     output: web
     title: prodb
   output: web

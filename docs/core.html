@@ -720,7 +720,7 @@ nb_path: "nbs/00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="display_readable" class="doc_header"><code>display_readable</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/core.py#L51" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>display_readable</code>(<strong><code>df</code></strong>, <strong><code>max_rows</code></strong>=<em><code>8</code></em>)</p>
+<h4 id="readable_df" class="doc_header"><code>readable_df</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/core.py#L51" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>readable_df</code>(<strong><code>df</code></strong>, <strong><code>max_rows</code></strong>=<em><code>8</code></em>)</p>
 </blockquote>
 
 </div>
@@ -747,12 +747,12 @@ nb_path: "nbs/00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Bill&#39;</span><span class="p">,</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Luke&#39;</span><span class="p">,</span> 
         <span class="s1">&#39;mood&#39;</span><span class="p">:</span> <span class="s1">&#39;😊&#39;</span><span class="p">,</span> 
         <span class="s1">&#39;message&#39;</span><span class="p">:</span><span class="s1">&#39;hello, from UK&#39;</span><span class="p">,</span>
         <span class="s1">&#39;time_utc&#39;</span><span class="p">:</span><span class="n">utc_now</span><span class="p">()}</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">insert_row</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-<span class="n">display_readable</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">display_readable</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -765,7 +765,7 @@ nb_path: "nbs/00_core.ipynb"
 <div class="output_area">
 
 
-<div class="output_html rendered_html output_subarea ">
+<div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -793,52 +793,12 @@ nb_path: "nbs/00_core.ipynb"
   </thead>
   <tbody>
     <tr>
-      <th>2</th>
-      <td>Luke</td>
-      <td>👹</td>
-      <td>hello from London, UK</td>
-      <td>2021-11-04 15:04:57</td>
-      <td>3 minutes ago</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Bill</td>
-      <td>👹</td>
-      <td>hi</td>
-      <td>2021-11-04 15:04:58</td>
-      <td>3 minutes ago</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Bill</td>
-      <td>👹</td>
-      <td>hi</td>
-      <td>2021-11-04 15:06:34</td>
-      <td>2 minutes ago</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Bill</td>
-      <td>👹</td>
-      <td>hi</td>
-      <td>2021-11-04 15:06:44</td>
-      <td>a minute ago</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Bill</td>
-      <td>😊</td>
-      <td>hello, from UK</td>
-      <td>2021-11-04 15:07:10</td>
-      <td>a minute ago</td>
-    </tr>
-    <tr>
       <th>7</th>
       <td>Bill</td>
       <td>😊</td>
       <td>hello, from UK</td>
       <td>2021-11-04 15:08:15</td>
-      <td>27 seconds ago</td>
+      <td>an hour ago</td>
     </tr>
     <tr>
       <th>8</th>
@@ -846,7 +806,7 @@ nb_path: "nbs/00_core.ipynb"
       <td>😊</td>
       <td>hello, from UK</td>
       <td>2021-11-04 15:08:17</td>
-      <td>25 seconds ago</td>
+      <td>an hour ago</td>
     </tr>
     <tr>
       <th>9</th>
@@ -854,6 +814,46 @@ nb_path: "nbs/00_core.ipynb"
       <td>😊</td>
       <td>hello, from UK</td>
       <td>2021-11-04 15:08:42</td>
+      <td>an hour ago</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Bill</td>
+      <td>😊</td>
+      <td>hello, from UK</td>
+      <td>2021-11-04 16:55:36</td>
+      <td>4 minutes ago</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Bill</td>
+      <td>😊</td>
+      <td>hello, from UK</td>
+      <td>2021-11-04 16:56:08</td>
+      <td>4 minutes ago</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Bill</td>
+      <td>😊</td>
+      <td>hello, from UK</td>
+      <td>2021-11-04 16:56:31</td>
+      <td>3 minutes ago</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Luke</td>
+      <td>😊</td>
+      <td>hello, from UK</td>
+      <td>2021-11-04 16:56:38</td>
+      <td>3 minutes ago</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Luke</td>
+      <td>😊</td>
+      <td>hello, from UK</td>
+      <td>2021-11-04 17:00:13</td>
       <td>just now</td>
     </tr>
   </tbody>
