@@ -10,7 +10,6 @@ from prodb.core import generate_db, insert_row, utc_now
 def readable_df(df, max_rows=8):
     if 'time_utc' in df.columns:
         df['human_time'] = df.time_utc.apply(lambda x: arrow.get(x).humanize())
-        df = df.drop('time_utc', axis=1)
     return df.tail(8)
 
 
@@ -25,8 +24,6 @@ def main():
     if not os.path.isfile(dbpath): 
         df = generate_db(dbpath=dbpath, cols=cols)
     else: df = pd.read_csv(dbpath)
-
-
 
     # ================= input ================= #
     with st.form(key='columns_in_form'):
@@ -43,10 +40,6 @@ def main():
             df = insert_row(df, data)
 
     st.write(readable_df(df, max_rows=10))
-
-    # st.write(display_readable(df, max_rows=10))
-    # df['human'] = df.time_utc.apply(lambda x: arrow.get(x).humanize())
-    # st.write(df[['name', 'human', 'mood', 'message']].tail(8))
 
     # ================= metrics ================= #
     col0, col1, col2, col3 = st.columns(4)

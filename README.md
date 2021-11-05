@@ -20,6 +20,9 @@ conda create -n prodb python=3.9 jupyter pip nbdev twine
 conda activate prodb  
 git clone https://github.com/lukexyz/prodb.git  
 pip install -r requirements.txt  
+
+conda install gh --channel conda-forge  # github cli
+gh auth login
 ```
   
   
