@@ -38,25 +38,6 @@ nb_path: "nbs/03_examples.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">arrow</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
 <div class="output">
@@ -65,7 +46,7 @@ nb_path: "nbs/03_examples.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_json_from_query" class="doc_header"><code>get_json_from_query</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/examples.py#L6" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_json_from_query</code>(<strong><code>location</code></strong>)</p>
+<h4 id="get_json_from_query" class="doc_header"><code>get_json_from_query</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/examples.py#L14" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_json_from_query</code>(<strong><code>location</code></strong>)</p>
 </blockquote>
 <p>Search for a city and return metadata from API</p>
 
@@ -199,7 +180,7 @@ nb_path: "nbs/03_examples.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_current_weather" class="doc_header"><code>get_current_weather</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/examples.py#L14" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_current_weather</code>(<strong><code>location</code></strong>)</p>
+<h4 id="get_current_weather" class="doc_header"><code>get_current_weather</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/examples.py#L22" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_current_weather</code>(<strong><code>location</code></strong>)</p>
 </blockquote>
 <p>inputs: location str "London"
         to find woeid i.e. 44418</p>
@@ -250,7 +231,7 @@ nb_path: "nbs/03_examples.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Wall time: 2.38 s
+<pre>Wall time: 1.41 s
 </pre>
 </div>
 </div>
@@ -260,19 +241,19 @@ nb_path: "nbs/03_examples.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;id&#39;: 6607174022201344,
+<pre>{&#39;id&#39;: 4750463216910336,
  &#39;weather_state_name&#39;: &#39;Heavy Cloud&#39;,
  &#39;weather_state_abbr&#39;: &#39;hc&#39;,
  &#39;wind_direction_compass&#39;: &#39;WNW&#39;,
- &#39;created&#39;: &#39;2021-11-05T18:59:01.554259Z&#39;,
+ &#39;created&#39;: &#39;2021-11-05T21:59:03.365952Z&#39;,
  &#39;applicable_date&#39;: &#39;2021-11-05&#39;,
  &#39;min_temp&#39;: 2.915,
- &#39;max_temp&#39;: 10.14,
- &#39;the_temp&#39;: 9.030000000000001,
- &#39;wind_speed&#39;: 4.357755747228187,
+ &#39;max_temp&#39;: 9.870000000000001,
+ &#39;the_temp&#39;: 8.695,
+ &#39;wind_speed&#39;: 4.384422413894854,
  &#39;wind_direction&#39;: 281.959650545896,
  &#39;air_pressure&#39;: 1027.0,
- &#39;humidity&#39;: 67,
+ &#39;humidity&#39;: 65,
  &#39;visibility&#39;: 7.677973136880617,
  &#39;predictability&#39;: 71}</pre>
 </div>
@@ -362,22 +343,22 @@ nb_path: "nbs/03_examples.ipynb"
   <tbody>
     <tr>
       <th>0</th>
-      <td>6607174022201344</td>
+      <td>4750463216910336</td>
       <td>Heavy Cloud</td>
       <td>hc</td>
       <td>WNW</td>
-      <td>2021-11-05T18:59:01.554259Z</td>
+      <td>2021-11-05T21:59:03.365952Z</td>
       <td>2021-11-05</td>
       <td>2.915</td>
-      <td>10.14</td>
-      <td>9.03</td>
-      <td>4.357756</td>
+      <td>9.87</td>
+      <td>8.695</td>
+      <td>4.384422</td>
       <td>281.959651</td>
       <td>1027.0</td>
-      <td>67</td>
+      <td>65</td>
       <td>7.677973</td>
       <td>71</td>
-      <td>2 hours ago</td>
+      <td>49 minutes ago</td>
     </tr>
   </tbody>
 </table>
@@ -403,7 +384,7 @@ nb_path: "nbs/03_examples.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="df_from_loc" class="doc_header"><code>df_from_loc</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/examples.py#L26" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>df_from_loc</code>(<strong><code>location</code></strong>, <strong><code>days_ahead</code></strong>=<em><code>1</code></em>, <strong><code>keep_cols</code></strong>=<em><code>['location', 'the_temp', 'readable_time', 'created', 'applicable_date', 'local_time', 'latt_long', 'weather_state_name', 'min_temp', 'max_temp']</code></em>)</p>
+<h4 id="df_from_loc" class="doc_header"><code>df_from_loc</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/examples.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>df_from_loc</code>(<strong><code>location</code></strong>, <strong><code>days_ahead</code></strong>=<em><code>1</code></em>, <strong><code>keep_cols</code></strong>=<em><code>['location', 'the_temp', 'readable_time', 'created', 'applicable_date', 'local_time', 'latt_long', 'weather_state_name', 'min_temp', 'max_temp']</code></em>)</p>
 </blockquote>
 
 </div>
@@ -479,28 +460,28 @@ nb_path: "nbs/03_examples.ipynb"
     <tr>
       <th>0</th>
       <td>London</td>
-      <td>9.030</td>
-      <td>2 hours ago</td>
-      <td>2021-11-05T18:59:01.554259Z</td>
+      <td>8.695</td>
+      <td>49 minutes ago</td>
+      <td>2021-11-05T21:59:03.365952Z</td>
       <td>2021-11-05</td>
-      <td>21:37 (2021-11-05)</td>
+      <td>22:48 (2021-11-05)</td>
       <td>51.506321,-0.12714</td>
       <td>Heavy Cloud</td>
       <td>2.915</td>
-      <td>10.140</td>
+      <td>9.87</td>
     </tr>
     <tr>
       <th>1</th>
       <td>London</td>
-      <td>12.045</td>
-      <td>2 hours ago</td>
-      <td>2021-11-05T18:59:01.554659Z</td>
+      <td>11.945</td>
+      <td>49 minutes ago</td>
+      <td>2021-11-05T21:59:02.455721Z</td>
       <td>2021-11-06</td>
-      <td>21:37 (2021-11-05)</td>
+      <td>22:48 (2021-11-05)</td>
       <td>51.506321,-0.12714</td>
-      <td>Heavy Cloud</td>
-      <td>6.490</td>
-      <td>12.985</td>
+      <td>Showers</td>
+      <td>7.010</td>
+      <td>13.07</td>
     </tr>
   </tbody>
 </table>
@@ -578,15 +559,15 @@ nb_path: "nbs/03_examples.ipynb"
     <tr>
       <th>0</th>
       <td>Auckland</td>
-      <td>19.67</td>
-      <td>2 hours ago</td>
-      <td>2021-11-05T19:37:04.232519Z</td>
+      <td>19.185</td>
+      <td>11 minutes ago</td>
+      <td>2021-11-05T22:37:05.593308Z</td>
       <td>2021-11-06</td>
-      <td>10:37 (2021-11-06)</td>
+      <td>11:48 (2021-11-06)</td>
       <td>-36.884109,174.770416</td>
-      <td>Light Rain</td>
-      <td>13.155</td>
-      <td>20.35</td>
+      <td>Heavy Rain</td>
+      <td>12.97</td>
+      <td>20.13</td>
     </tr>
   </tbody>
 </table>
@@ -640,11 +621,11 @@ nb_path: "nbs/03_examples.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dbpath</span> <span class="o">=</span> <span class="s1">&#39;db.csv&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dbpath</span> <span class="o">=</span> <span class="s1">&#39;weather_db.csv&#39;</span>
 <span class="n">cols</span> <span class="o">=</span> <span class="s1">&#39;location temp high low weather_state&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
 <span class="n">generate_db</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">dbpath</span><span class="o">=</span><span class="n">dbpath</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;db.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dbpath</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -658,7 +639,7 @@ nb_path: "nbs/03_examples.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>✓💾 db.csv (38 kb)
+<pre>✓💾 weather_db.csv (38 kb)
 </pre>
 </div>
 </div>
@@ -768,98 +749,15 @@ nb_path: "nbs/03_examples.ipynb"
     <tr>
       <th>0</th>
       <td>Auckland</td>
-      <td>19.67</td>
-      <td>2 hours ago</td>
-      <td>2021-11-05T19:37:04.232519Z</td>
+      <td>19.185</td>
+      <td>16 minutes ago</td>
+      <td>2021-11-05T22:37:05.593308Z</td>
       <td>2021-11-06</td>
-      <td>10:42 (2021-11-06)</td>
+      <td>11:53 (2021-11-06)</td>
       <td>-36.884109,174.770416</td>
-      <td>Light Rain</td>
-      <td>13.155</td>
-      <td>20.35</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dx</span> <span class="o">=</span> <span class="n">df_from_loc</span><span class="p">(</span><span class="s1">&#39;Christchurch&#39;</span><span class="p">)</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="n">dx</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
-        <span class="s1">&#39;time_utc&#39;</span><span class="p">:</span> <span class="n">arrow</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;YYYY-MM-DD HH:mm:ss&#39;</span><span class="p">),</span>
-        <span class="s1">&#39;temp&#39;</span><span class="p">:</span> <span class="n">dx</span><span class="o">.</span><span class="n">the_temp</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
-        <span class="s1">&#39;high&#39;</span><span class="p">:</span> <span class="n">dx</span><span class="o">.</span><span class="n">max_temp</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
-        <span class="s1">&#39;low&#39;</span><span class="p">:</span> <span class="n">dx</span><span class="o">.</span><span class="n">min_temp</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
-        <span class="s1">&#39;weather_state&#39;</span><span class="p">:</span> <span class="n">dx</span><span class="o">.</span><span class="n">weather_state_name</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
-        <span class="s1">&#39;local_time&#39;</span><span class="p">:</span> <span class="n">dx</span><span class="o">.</span><span class="n">local_time</span><span class="o">.</span><span class="n">item</span><span class="p">()}</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">insert_row</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>location</th>
-      <th>temp</th>
-      <th>high</th>
-      <th>low</th>
-      <th>weather_state</th>
-      <th>local_time</th>
-      <th>time_utc</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Christchurch</td>
-      <td>15.95</td>
-      <td>15.385</td>
-      <td>9.54</td>
-      <td>Heavy Cloud</td>
-      <td>10:42 (2021-11-06)</td>
-      <td>2021-11-05 21:42:27</td>
+      <td>Heavy Rain</td>
+      <td>12.97</td>
+      <td>20.13</td>
     </tr>
   </tbody>
 </table>
@@ -885,7 +783,7 @@ nb_path: "nbs/03_examples.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="visit_city" class="doc_header"><code>visit_city</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/examples.py#L40" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>visit_city</code>(<strong><code>df</code></strong>, <strong><code>cities</code></strong>)</p>
+<h4 id="visit_city" class="doc_header"><code>visit_city</code><a href="https://github.com/lukexyz/prodb/tree/master/prodb/examples.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>visit_city</code>(<strong><code>df</code></strong>, <strong><code>cities</code></strong>, <strong><code>dbpath</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -912,7 +810,7 @@ nb_path: "nbs/03_examples.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">visit_city</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Wellington&#39;</span><span class="p">,</span> <span class="s1">&#39;Lagos&#39;</span><span class="p">,</span> <span class="s1">&#39;Zagreb&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">visit_city</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Christchurch&#39;</span><span class="p">,</span> <span class="s1">&#39;Wellington&#39;</span><span class="p">,</span> <span class="s1">&#39;Lagos&#39;</span><span class="p">,</span> <span class="s1">&#39;Zagreb&#39;</span><span class="p">],</span> <span class="n">dbpath</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
@@ -950,6 +848,7 @@ nb_path: "nbs/03_examples.ipynb"
       <th>high</th>
       <th>low</th>
       <th>weather_state</th>
+      <th>latlong</th>
       <th>local_time</th>
       <th>time_utc</th>
     </tr>
@@ -958,42 +857,46 @@ nb_path: "nbs/03_examples.ipynb"
     <tr>
       <th>0</th>
       <td>Christchurch</td>
-      <td>15.95</td>
-      <td>15.385</td>
-      <td>9.54</td>
+      <td>16.0</td>
+      <td>15.4</td>
+      <td>9.5</td>
       <td>Heavy Cloud</td>
-      <td>10:42 (2021-11-06)</td>
-      <td>2021-11-05 21:42:27</td>
+      <td>-43.527519,172.635422</td>
+      <td>11:52 (2021-11-06)</td>
+      <td>2021-11-05 22:52:24</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Wellington</td>
-      <td>16.90</td>
-      <td>16.200</td>
-      <td>12.50</td>
+      <td>16.9</td>
+      <td>16.2</td>
+      <td>12.5</td>
       <td>Showers</td>
-      <td>10:42 (2021-11-06)</td>
-      <td>2021-11-05 21:42:33</td>
+      <td>-41.283779,174.787979</td>
+      <td>11:52 (2021-11-06)</td>
+      <td>2021-11-05 22:52:25</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Lagos</td>
-      <td>29.80</td>
-      <td>30.400</td>
-      <td>25.30</td>
+      <td>30.5</td>
+      <td>31.2</td>
+      <td>25.3</td>
       <td>Heavy Rain</td>
-      <td>22:42 (2021-11-05)</td>
-      <td>2021-11-05 21:42:36</td>
+      <td>6.439180,3.423480</td>
+      <td>23:52 (2021-11-05)</td>
+      <td>2021-11-05 22:52:28</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Zagreb</td>
-      <td>10.10</td>
-      <td>11.100</td>
-      <td>7.80</td>
+      <td>10.1</td>
+      <td>11.1</td>
+      <td>7.8</td>
       <td>Showers</td>
-      <td>22:42 (2021-11-05)</td>
-      <td>2021-11-05 21:42:39</td>
+      <td>45.807259,15.967600</td>
+      <td>23:52 (2021-11-05)</td>
+      <td>2021-11-05 22:52:31</td>
     </tr>
   </tbody>
 </table>
@@ -1015,7 +918,7 @@ nb_path: "nbs/03_examples.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">visit_city</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;Wellington&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">visit_city</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;Yangon&#39;</span><span class="p">,</span> <span class="n">dbpath</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
@@ -1053,6 +956,7 @@ nb_path: "nbs/03_examples.ipynb"
       <th>high</th>
       <th>low</th>
       <th>weather_state</th>
+      <th>latlong</th>
       <th>local_time</th>
       <th>time_utc</th>
     </tr>
@@ -1061,52 +965,57 @@ nb_path: "nbs/03_examples.ipynb"
     <tr>
       <th>0</th>
       <td>Christchurch</td>
-      <td>15.95</td>
-      <td>15.385</td>
-      <td>9.54</td>
+      <td>16.0</td>
+      <td>15.4</td>
+      <td>9.5</td>
       <td>Heavy Cloud</td>
-      <td>10:42 (2021-11-06)</td>
-      <td>2021-11-05 21:42:27</td>
+      <td>-43.527519,172.635422</td>
+      <td>11:52 (2021-11-06)</td>
+      <td>2021-11-05 22:52:24</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Wellington</td>
-      <td>16.90</td>
-      <td>16.200</td>
-      <td>12.50</td>
+      <td>16.9</td>
+      <td>16.2</td>
+      <td>12.5</td>
       <td>Showers</td>
-      <td>10:42 (2021-11-06)</td>
-      <td>2021-11-05 21:42:33</td>
+      <td>-41.283779,174.787979</td>
+      <td>11:52 (2021-11-06)</td>
+      <td>2021-11-05 22:52:25</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Lagos</td>
-      <td>29.80</td>
-      <td>30.400</td>
-      <td>25.30</td>
+      <td>30.5</td>
+      <td>31.2</td>
+      <td>25.3</td>
       <td>Heavy Rain</td>
-      <td>22:42 (2021-11-05)</td>
-      <td>2021-11-05 21:42:36</td>
+      <td>6.439180,3.423480</td>
+      <td>23:52 (2021-11-05)</td>
+      <td>2021-11-05 22:52:28</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Zagreb</td>
-      <td>10.10</td>
-      <td>11.100</td>
-      <td>7.80</td>
+      <td>10.1</td>
+      <td>11.1</td>
+      <td>7.8</td>
       <td>Showers</td>
-      <td>22:42 (2021-11-05)</td>
-      <td>2021-11-05 21:42:39</td>
+      <td>45.807259,15.967600</td>
+      <td>23:52 (2021-11-05)</td>
+      <td>2021-11-05 22:52:31</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Wellington</td>
-      <td>16.90</td>
-      <td>16.200</td>
-      <td>12.50</td>
-      <td>Showers</td>
-      <td>10:42 (2021-11-06)</td>
-      <td>2021-11-05 21:42:43</td>
+      <td>Yangon</td>
+      <td>30.3</td>
+      <td>32.3</td>
+      <td>23.4</td>
+      <td>Heavy Cloud</td>
+      <td>16.803890,96.154694</td>
+      <td>05:22 (2021-11-06)</td>
+      <td>2021-11-05 22:52:33</td>
     </tr>
   </tbody>
 </table>
@@ -1128,7 +1037,7 @@ nb_path: "nbs/03_examples.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">visit_city</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Singapore&#39;</span><span class="p">,</span> <span class="s1">&#39;Alexandria&#39;</span><span class="p">,</span> <span class="s1">&#39;Bangkok&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">visit_city</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Singapore&#39;</span><span class="p">,</span> <span class="s1">&#39;Alexandria&#39;</span><span class="p">,</span> <span class="s1">&#39;Bangkok&#39;</span><span class="p">],</span> <span class="n">dbpath</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
@@ -1166,6 +1075,7 @@ nb_path: "nbs/03_examples.ipynb"
       <th>high</th>
       <th>low</th>
       <th>weather_state</th>
+      <th>latlong</th>
       <th>local_time</th>
       <th>time_utc</th>
     </tr>
@@ -1174,82 +1084,90 @@ nb_path: "nbs/03_examples.ipynb"
     <tr>
       <th>0</th>
       <td>Christchurch</td>
-      <td>15.95</td>
-      <td>15.385</td>
-      <td>9.54</td>
+      <td>16.0</td>
+      <td>15.4</td>
+      <td>9.5</td>
       <td>Heavy Cloud</td>
-      <td>10:42 (2021-11-06)</td>
-      <td>2021-11-05 21:42:27</td>
+      <td>-43.527519,172.635422</td>
+      <td>11:52 (2021-11-06)</td>
+      <td>2021-11-05 22:52:24</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Wellington</td>
-      <td>16.90</td>
-      <td>16.200</td>
-      <td>12.50</td>
+      <td>16.9</td>
+      <td>16.2</td>
+      <td>12.5</td>
       <td>Showers</td>
-      <td>10:42 (2021-11-06)</td>
-      <td>2021-11-05 21:42:33</td>
+      <td>-41.283779,174.787979</td>
+      <td>11:52 (2021-11-06)</td>
+      <td>2021-11-05 22:52:25</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Lagos</td>
-      <td>29.80</td>
-      <td>30.400</td>
-      <td>25.30</td>
+      <td>30.5</td>
+      <td>31.2</td>
+      <td>25.3</td>
       <td>Heavy Rain</td>
-      <td>22:42 (2021-11-05)</td>
-      <td>2021-11-05 21:42:36</td>
+      <td>6.439180,3.423480</td>
+      <td>23:52 (2021-11-05)</td>
+      <td>2021-11-05 22:52:28</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Zagreb</td>
-      <td>10.10</td>
-      <td>11.100</td>
-      <td>7.80</td>
+      <td>10.1</td>
+      <td>11.1</td>
+      <td>7.8</td>
       <td>Showers</td>
-      <td>22:42 (2021-11-05)</td>
-      <td>2021-11-05 21:42:39</td>
+      <td>45.807259,15.967600</td>
+      <td>23:52 (2021-11-05)</td>
+      <td>2021-11-05 22:52:31</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Wellington</td>
-      <td>16.90</td>
-      <td>16.200</td>
-      <td>12.50</td>
-      <td>Showers</td>
-      <td>10:42 (2021-11-06)</td>
-      <td>2021-11-05 21:42:43</td>
+      <td>Yangon</td>
+      <td>30.3</td>
+      <td>32.3</td>
+      <td>23.4</td>
+      <td>Heavy Cloud</td>
+      <td>16.803890,96.154694</td>
+      <td>05:22 (2021-11-06)</td>
+      <td>2021-11-05 22:52:33</td>
     </tr>
     <tr>
       <th>5</th>
       <td>Singapore</td>
-      <td>28.90</td>
-      <td>29.500</td>
-      <td>25.30</td>
+      <td>29.0</td>
+      <td>29.5</td>
+      <td>25.8</td>
       <td>Heavy Rain</td>
-      <td>05:42 (2021-11-06)</td>
-      <td>2021-11-05 21:42:44</td>
+      <td>1.293780,103.853256</td>
+      <td>06:52 (2021-11-06)</td>
+      <td>2021-11-05 22:52:35</td>
     </tr>
     <tr>
       <th>6</th>
       <td>Alexandria</td>
-      <td>24.90</td>
-      <td>25.000</td>
-      <td>21.30</td>
+      <td>24.6</td>
+      <td>24.9</td>
+      <td>21.4</td>
       <td>Clear</td>
-      <td>23:42 (2021-11-05)</td>
-      <td>2021-11-05 21:42:46</td>
+      <td>31.210489, 29.912430</td>
+      <td>00:52 (2021-11-06)</td>
+      <td>2021-11-05 22:52:37</td>
     </tr>
     <tr>
       <th>7</th>
       <td>Bangkok</td>
-      <td>33.40</td>
-      <td>33.400</td>
-      <td>25.40</td>
+      <td>33.4</td>
+      <td>33.0</td>
+      <td>25.6</td>
       <td>Light Rain</td>
-      <td>04:42 (2021-11-06)</td>
-      <td>2021-11-05 21:42:47</td>
+      <td>13.753330,100.504822</td>
+      <td>05:52 (2021-11-06)</td>
+      <td>2021-11-05 22:52:38</td>
     </tr>
   </tbody>
 </table>
@@ -1258,23 +1176,6 @@ nb_path: "nbs/03_examples.ipynb"
 
 </div>
 
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">prodb.core</span> <span class="kn">import</span> 
-</pre></div>
-
-    </div>
 </div>
 </div>
 

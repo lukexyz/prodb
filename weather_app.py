@@ -8,8 +8,9 @@ from prodb.examples import visit_city
 
 
 def main():
+    
     t1, t2 = st.columns((4,1))
-    t1.title('🦄 Pro db - WEATHER APP')
+    t1.title('🦄 Weather with Pro db')
 
     dbpath = 'weather_db.csv'
     cols = 'location temp high low weather_state latlong'.split()
@@ -20,20 +21,17 @@ def main():
         df = generate_db(dbpath=dbpath, cols=cols)
     else: df = pd.read_csv(dbpath)
 
-    with st.form(key='columns_in_form'):
-        city_suggestions = ['wellington', 'London', 'Lagos', 'Zagreb', 'Singapore', 'Alexandria', 'Bangkok']
-        random.shuffle(city_suggestions)
-        cities = st.text_input('City', city_suggestions[0])
+    with st.form(key='cities', clear_on_submit=False):
+        # Note: form sequence bug still exists
+        city_suggestions = ['Wellington', 'London', 'Lagos', 'Zagreb', 'Singapore', 'Alexandria', 'Bangkok']
+        i = random.randint(0, len(city_suggestions))-1
+        city = st.text_input(f'City{i}', city_suggestions[i])
         submitted = st.form_submit_button('➡️ Submit')
-        if submitted: df = visit_city(df, cities, dbpath)
-    
-    #df = visit_city(df, cities)
-    st.write(readable_df(df, max_rows=10))
+        if submitted: df = visit_city(df, city, dbpath)
 
-    dx = pd.DataFrame(np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-    columns=['lat', 'lon'])
-
-    st.map(dx)
+    if not df.empty:
+        dx = readable_df(df, max_rows=10)
+        st.write(dx.drop(['latlong', 'time_utc'], axis=1).style.format("{:1}"))
 
     # ================= metrics ================= #
     col0, col1, col2, col3 = st.columns(4)
@@ -47,8 +45,8 @@ def main():
 
 if __name__ == '__main__':
     st.set_page_config(
-        page_title="Weather App",
-        page_icon="🌤️",
+        page_title="🌤️ Weather App",
+        page_icon="🦄",
         layout="centered",
         initial_sidebar_state="auto")
     main()

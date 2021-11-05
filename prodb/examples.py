@@ -37,7 +37,7 @@ def df_from_loc(location,
     res = get_current_weather(location)
     df =  pd.DataFrame.from_records(res['consolidated_weather'][:days_ahead])
     df['location'] = location
-    df['local_time'] = pd.to_datetime(res['time']).strftime('%H:%M (%Y-%m-%d)')
+    df['local_time'] = pd.to_datetime(res['time']).strftime('%H:%M')
     df['latt_long'] = res['latt_long']
     df['readable_time'] = df.created.apply(lambda x: arrow.get(x).humanize())
     return df[keep_cols]
