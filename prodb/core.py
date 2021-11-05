@@ -51,6 +51,4 @@ def utc_now():
 def display_readable(df, max_rows=8):
     if 'time_utc' in df.columns:
         df['human_time'] = df.time_utc.apply(lambda x: arrow.get(x).humanize())
-        display(df.tail(max_rows))
-    else:
-        display(df.tail(max_rows))
+    return df.tail(8)
