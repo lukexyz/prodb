@@ -1,0 +1,20 @@
+name,mood,message,time_utc,human_time,high,local_time,location,low,temp,weather_state,latlong
+Sam,😊,"hello from London, UK",2021-11-05 22:29:05,40 seconds ago,,,,,,,
+Grant,😵,"hello from Christchurch, NZ",2021-11-05 22:29:05,40 seconds ago,,,,,,,
+Luke,👹,"hello from London, UK",2021-11-05 22:29:05,40 seconds ago,,,,,,,
+Bill,👹,hi,2021-11-05 22:29:05,40 seconds ago,,,,,,,
+Luke,😊,"hello, from UK",2021-11-05 22:29:06,39 seconds ago,,,,,,,
+Luke,😊,"hello, from UK",2021-11-05 22:29:10,35 seconds ago,,,,,,,
+Luke,😊,"hello, from UK",2021-11-05 22:29:36,just now,,,,,,,
+Luke,😊,"hello, from UK",2021-11-05 22:29:40,just now,,,,,,,
+Luke,😊,"hello, from UK",2021-11-05 22:29:44,just now,,,,,,,
+Luke,😊,"hello, from UK",2021-11-05 22:29:50,,,,,,,,
+,,,2021-11-05 22:38:17,,15.4,11:38 (2021-11-06),Christchurch,9.5,16.0,Heavy Cloud,
+,,,2021-11-05 22:49:01,,15.4,11:49 (2021-11-06),Christchurch,9.5,16.0,Heavy Cloud,
+,,,2021-11-05 22:49:03,,16.2,11:49 (2021-11-06),Wellington,12.5,16.9,Showers,"-41.283779,174.787979"
+,,,2021-11-05 22:49:04,,31.2,23:49 (2021-11-05),Lagos,25.3,30.5,Heavy Rain,"6.439180,3.423480"
+,,,2021-11-05 22:49:06,,11.1,23:49 (2021-11-05),Zagreb,7.8,10.1,Showers,"45.807259,15.967600"
+,,,2021-11-05 22:49:07,,16.2,11:49 (2021-11-06),Wellington,12.5,16.9,Showers,"-41.283779,174.787979"
+,,,2021-11-05 22:49:08,,29.5,06:49 (2021-11-06),Singapore,25.8,29.0,Heavy Rain,"1.293780,103.853256"
+,,,2021-11-05 22:49:10,,24.9,00:49 (2021-11-06),Alexandria,21.4,24.6,Clear,"31.210489, 29.912430"
+,,,2021-11-05 22:49:13,,33.0,05:49 (2021-11-06),Bangkok,25.6,33.4,Light Rain,"13.753330,100.504822"

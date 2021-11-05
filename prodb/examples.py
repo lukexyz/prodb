@@ -3,6 +3,14 @@
 __all__ = ['get_json_from_query', 'get_current_weather', 'df_from_loc', 'visit_city']
 
 # Cell
+#hide
+import requests
+import json
+import arrow
+import pandas as pd
+from .core import generate_db, insert_row
+
+# Cell
 def get_json_from_query(location):
     """Search for a city and return metadata from API"""
     url = f"https://www.metaweather.com/api/location/search/?query={location}"
@@ -37,7 +45,7 @@ def df_from_loc(location,
 
 # Cell
 
-def visit_city(df, cities):
+def visit_city(df, cities, dbpath):
     if isinstance(cities, str): cities = [cities]
     for city in cities:
         dx = df_from_loc(city).round(1)
@@ -48,7 +56,8 @@ def visit_city(df, cities):
                 'high': dx.max_temp.item(),
                 'low': dx.min_temp.item(),
                 'weather_state': dx.weather_state_name.item(),
-                'local_time': dx.local_time.item()}
+                'local_time': dx.local_time.item(),
+                'latlong': dx.latt_long.item()}
 
-        df = insert_row(df, data)
-    return df
+        df = insert_row(df, data, dbpath)
+    return df.round(1)

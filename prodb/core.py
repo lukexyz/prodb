@@ -8,6 +8,7 @@ import pandas as pd
 import arrow
 import os
 from time import gmtime, strftime
+#from prodb.core import generate_db, insert_row, utc_now, readable_df
 
 # Cell
 
@@ -48,7 +49,9 @@ def utc_now():
     return arrow.utcnow().format('YYYY-MM-DD HH:mm:ss')
 
 # Cell
-def readable_df(df, max_rows=8):
+def readable_df(df, max_rows=8, drop_cols=None):
     if 'time_utc' in df.columns:
         df['human_time'] = df.time_utc.apply(lambda x: arrow.get(x).humanize())
+    if drop_cols:
+        df = df.drop(drop_cols, axis=1)
     return df.tail(8)
