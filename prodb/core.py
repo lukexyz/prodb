@@ -49,9 +49,7 @@ def utc_now():
     return arrow.utcnow().format('YYYY-MM-DD HH:mm:ss')
 
 # Cell
-def readable_df(df, max_rows=8, drop_cols=None):
+def readable_df(df, max_rows=8, col_name='human_time'):
     if 'time_utc' in df.columns:
-        df['human_time'] = df.time_utc.apply(lambda x: arrow.get(x).humanize())
-    if drop_cols:
-        df = df.drop(drop_cols, axis=1)
+        df[col_name] = df.time_utc.apply(lambda x: arrow.get(x).humanize())
     return df.tail(8)

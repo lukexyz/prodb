@@ -13,7 +13,7 @@ def main():
     t1.title('🦄 Weather with Pro db')
 
     dbpath = 'weather_db.csv'
-    cols = 'location temp high low weather_state latlong'.split()
+    cols = 'location weather_state temp high low local_time latlong'.split()
 
     if t2.button('⬆️ Reset db'): 
         df = generate_db(dbpath=dbpath, cols=cols)
@@ -23,15 +23,22 @@ def main():
 
     with st.form(key='cities', clear_on_submit=False):
         # Note: form sequence bug still exists
-        city_suggestions = ['Wellington', 'London', 'Lagos', 'Zagreb', 'Singapore', 'Alexandria', 'Bangkok']
+        city_suggestions = ['Wellington', 'London', 'Lagos', 'Zagreb', 'Singapore', 'Alexandria', 'Bangkok', 'Dubai']
         i = random.randint(0, len(city_suggestions))-1
-        city = st.text_input(f'City{i}', city_suggestions[i])
+        city = st.text_input(f'City', city_suggestions[i])
         submitted = st.form_submit_button('➡️ Submit')
         if submitted: df = visit_city(df, city, dbpath)
 
     if not df.empty:
-        dx = readable_df(df, max_rows=10)
-        st.write(dx.drop(['latlong', 'time_utc'], axis=1).style.format("{:1}"))
+        dx = readable_df(df, max_rows=10, col_name='fetched')
+        states = ['Heavy Rain', 'Showers', 'Light Rain', 'Clear']
+        emojis = '🌧️ 🌦️ ☁️ 🌞'.split(' ')
+        dx.weather_state = dx.weather_state \
+                             .map(dict(zip(states, [f"{x} {y}" for x,y in zip(states,emojis)]))) \
+                             .fillna(dx['weather_state'])
+        dx = dx.drop(['latlong', 'time_utc'], axis=1).style.format("{:1}")
+        
+        st.write(dx)
 
     # ================= metrics ================= #
     col0, col1, col2, col3 = st.columns(4)
