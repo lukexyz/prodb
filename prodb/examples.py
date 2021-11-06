@@ -8,6 +8,7 @@ import requests
 import json
 import arrow
 import pandas as pd
+import sys; sys.path.append('../')
 from .core import generate_db, insert_row
 
 # Cell
