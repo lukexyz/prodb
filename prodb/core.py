@@ -14,6 +14,7 @@ from time import gmtime, strftime
 
 def generate_db(dbpath='db.csv',
                 cols=['_c1', '_c2', '_c3'],
+                verbose=True,
                 prefill=False):
     """Create example database"""
     if prefill:
@@ -25,7 +26,7 @@ def generate_db(dbpath='db.csv',
     else:
         df = pd.DataFrame(columns=cols)
     df.to_csv(dbpath, index=None)
-    print(f'✓💾 {dbpath} ({os.path.getsize(dbpath)} kb)')
+    if verbose: print(f'✓💾 {dbpath} ({os.path.getsize(dbpath)} kb)')
     return df
 
 
