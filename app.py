@@ -10,11 +10,13 @@ from prodb.core import generate_db, insert_row, utc_now, readable_df
 def main():
     t1, t2 = st.columns((4,1))
     t1.title('🦄 Pro db')
+    st.markdown('Usage: `pip install prodb`')
     dbpath = 'db.csv'
     cols = 'name mood message time_utc'.split()
 
     if t2.button('⬆️ Reset db'): 
-        df = generate_db(dbpath=dbpath, cols=cols)
+        if st.button('This resets the database'):
+            df = generate_db(dbpath=dbpath, cols=cols)
     if not os.path.isfile(dbpath): 
         df = generate_db(dbpath=dbpath, cols=cols)
     else: df = pd.read_csv(dbpath)
