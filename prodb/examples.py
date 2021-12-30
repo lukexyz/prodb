@@ -18,7 +18,6 @@ def get_json_from_query(location):
     r = requests.get(url).json()
     return r[0]
 
-
 # Cell
 def get_current_weather(location):
     """
@@ -43,9 +42,7 @@ def df_from_loc(location,
     df['readable_time'] = df.created.apply(lambda x: arrow.get(x).humanize())
     return df[keep_cols]
 
-
 # Cell
-
 def visit_city(df, cities, dbpath):
     if isinstance(cities, str): cities = [cities]
     for city in cities:

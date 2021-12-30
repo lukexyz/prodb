@@ -65,28 +65,25 @@ class Prodb(pd.DataFrame):
     def _constructor(self):
         return Prodb
 
-    def summary(self):
-        print(f'✓💾 {self.dbpath} ({os.path.getsize(self.dbpath)} kb)', end='\t')
+    def prodb_summary(self):
+        print(f'✓💾 {self.dbpath} ({os.path.getsize(self.dbpath)} KB)', end='\t')
         print(f"shape: {self.shape}", end='')
         display(self.tail(5))
 
-    def generate_db(self,
-                    dbpath='db.csv',
-                    verbose=True):
+    def prodb_generate(self,
+                       dbpath='db.csv',
+                       verbose=True):
         self.dbpath = dbpath
         self.to_csv(dbpath, index=None)
-        if verbose: self.summary()
+        if verbose: self.prodb_summary()
 
-    def insert_row(self, data):
-        new_row = pd.Series(data)
-        df = self.append(new_row, ignore_index=True)
-        #df.dbpath = self.dbpath
-        df.to_csv(df.dbpath, index=None)
-        return df
+    def prodb_insert(self,
+                     data):
+        """Insert row(s) into dataframe"""
+        if isinstance(list(data.values())[0], str): # single row
+            ndata = pd.Series(data)
+        else: ndata = pd.DataFrame.from_dict(data)  # multiple rows
 
-    def insert_rows(self, data):
-        new_rows = pd.DataFrame.from_dict(data)
-        df = self.append(new_rows, ignore_index=True)
-        #df.dbpath = self.dbpath
+        df = self.append(ndata, ignore_index=True)
         df.to_csv(df.dbpath, index=None)
         return df
