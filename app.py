@@ -14,7 +14,7 @@ def main():
     cols = 'name mood message time_utc'.split()
 
     if t2.button('⬆️ Reset db'): 
-        st.write('dev only')
+        st.code('dev only 🤫')
         # df = generate_db(dbpath=dbpath, cols=cols)
     if not os.path.isfile(dbpath): 
         df = generate_db(dbpath=dbpath, cols=cols)

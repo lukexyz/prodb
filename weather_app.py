@@ -16,7 +16,7 @@ def main():
     cols = 'location weather_state temp high low local_time latlong'.split()
 
     if t2.button('⬆️ Reset db'): 
-        st.write('dev only')
+        st.code('dev only 🤫')
         # df = generate_db(dbpath=dbpath, cols=cols)
     if not os.path.isfile(dbpath): 
         df = generate_db(dbpath=dbpath, cols=cols)
@@ -24,11 +24,13 @@ def main():
 
     # Note: form sequence bug still exists
     city_suggestions = ['Wellington', 'London', 'Lagos', 'Zagreb', 'Singapore', 'Alexandria', 'Bangkok', 'Dubai']
-    i = random.randint(0, len(city_suggestions))-1
+    i = random.randint(0, len(city_suggestions)) - 1
+    rand_city = city_suggestions[i]
+
     with st.form(key='cities', clear_on_submit=False):
-        city = st.text_input(f'City', city_suggestions[i])
+        st.session_state.city = st.text_input(f'City', rand_city)
         submitted = st.form_submit_button('➡️ Submit')
-        if submitted: df = visit_city(df, city, dbpath)
+        if submitted: df = visit_city(df, st.session_state.city, dbpath)
 
     if not df.empty:
         dx = readable_df(df, max_rows=10, col_name='fetched')
