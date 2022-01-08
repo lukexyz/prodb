@@ -13,6 +13,9 @@ entries:
       title: 00 Prodb API details
       url: core.html
     - output: web,pdf
+      title: 01 Prodb Benchmarks
+      url: benchmarks.html
+    - output: web,pdf
       title: "\U0001F31E Example Weather App"
       url: examples.html
     output: web

@@ -50,4 +50,13 @@ Frequently during develoment:
 
 ## Install
 
-`pip install prodb`
+> `pip install prodb`
+
+## Package auto-manager
+`make release`
+
+WSL error work around for: [Errno 16] Device or resource busy
+
+> ubuntu $ make release
+> windows > python setup.py sdist bdist_wheel
+> ubuntu $ twine upload --repository pypi dist/*

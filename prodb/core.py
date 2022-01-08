@@ -5,6 +5,7 @@ __all__ = ['generate_db', 'insert_row', 'insert_rows', 'utc_now', 'readable_df']
 # Cell
 #hide
 import pandas as pd
+import numpy as np
 import arrow
 import os
 from time import gmtime, strftime
