@@ -53,7 +53,7 @@ def utc_now():
 def readable_df(df, max_rows=8, col_name='human_time'):
     if 'time_utc' in df.columns:
         df[col_name] = df.time_utc.apply(lambda x: arrow.get(x).humanize())
-    return df.tail(8)
+    return df.tail(max_rows)
 
 # Cell
 
