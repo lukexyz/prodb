@@ -28,7 +28,7 @@ def main():
     rand_city = city_suggestions[i]
 
     with st.form(key='cities', clear_on_submit=False):
-        st.session_state.city = st.text_input(f'City', rand_city)
+        st.session_state.city = st.text_input(f'City', 'London') 
         submitted = st.form_submit_button('➡️ Submit')
         if submitted: df = visit_city(df, st.session_state.city, dbpath)
 
